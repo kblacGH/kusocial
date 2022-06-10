@@ -24,10 +24,10 @@ app.set('view engine', 'hbs');
 //Connection Pool
 const pool = mysql.createPool({
     connectionLimit: 10,
-    host: 'localhost',
-    user: 'root',
-    password: '702045369',
-    database: 'userprofile'
+    host: 'us-cdbr-east-05.cleardb.net',
+    user: 'b2a24ba299581b',
+    password: '671c84fb',
+    database: 'heroku_282c9d407c3e7e2'
 });
 
 pool.getConnection((err, connection)=> {
