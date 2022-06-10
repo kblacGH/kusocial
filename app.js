@@ -124,8 +124,6 @@ app.post('', (req, res) => {
         + (sampleFileDBname||'') + '","'+ (req.body.title||'') + '","' + (req.body.pbody||'') + '","' + (newdate||'')
         +'")';
         
-        connection.release();
-        
         
         connection.query(sql, (err, rows) => {
             //Once done, release connection
