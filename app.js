@@ -91,7 +91,7 @@ app.post('', (req, res) => {
             //file exists
             let num = 1;
             let newName = sampleFileDBname;
-            while(fs.existsSync('/upload/' + newName)) {
+            while(fs.existsSync('upload/' + newName)) {
                 newName = num + sampleFileDBname;
                 num++;
             }
@@ -100,7 +100,7 @@ app.post('', (req, res) => {
             return res.status(400).send({ success: false, err });
         }
 
-        uploadPath =  '/upload/' + sampleFileDBname;
+        uploadPath =  'upload/' + sampleFileDBname;
         console.log(sampleFile);
 
         //Use mv() to place file on the server
