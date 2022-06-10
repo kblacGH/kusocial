@@ -33,7 +33,7 @@ var pool = mysql.createPool({
 module.exports = pool;
 
 pool.getConnection((err, connection)=> {
-    if(err) throw err; //not connected
+    if(err) return res.status(400).send({ success: false, err }); //not connected
     console.log('Connected!');
 });
 
@@ -44,7 +44,7 @@ app.get('', (req, res) => {
 
 
     pool.getConnection((err, connection)=> {
-        if(err) throw err; //not connected
+        if(err) return res.status(400).send({ success: false, err }); //not connected
         console.log('Connected!');
 
         //ORDER BY postdate DESC
@@ -54,6 +54,9 @@ app.get('', (req, res) => {
 
                 if(!err) {
                     res.render('index', { rows });
+                }
+                else {
+                    return res.status(400).send({ success: false, err });
                 }
         });
 
@@ -94,7 +97,7 @@ app.post('', (req, res) => {
             }
             sampleFileDBname = newName;
         } catch(err) {
-            console.error(err)
+            return res.status(400).send({ success: false, err });
         }
 
         uploadPath = __dirname + '/upload/' + sampleFileDBname;
@@ -109,7 +112,7 @@ app.post('', (req, res) => {
     
 
     pool.getConnection((err, connection)=> {
-        if(err) throw err; //not connected
+        if(err) return res.status(400).send({ success: false, err }); //not connected
         console.log('Connected!');
             var dateObj = new Date();
             var month = dateObj.getUTCMonth() + 1; //months from 1-12
@@ -128,12 +131,8 @@ app.post('', (req, res) => {
                 if(!err) {
                     res.redirect('/');
                 } else {
-                    console.log(err);
+                    return res.status(400).send({ success: false, err });
                 }
-        });
-        return res.status(200).json({
-            status: 'succes',
-            data: req.body,
         });
     
     
