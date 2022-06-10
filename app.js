@@ -18,6 +18,7 @@ app.use(express.static('upload'));
 //templating engine
 app.engine('hbs', exphbs.engine({ extname: '.hbs'}));
 app.set('view engine', 'hbs');
+app.set('port', port);
 
 
 
