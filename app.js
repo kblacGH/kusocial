@@ -131,7 +131,10 @@ app.post('', (req, res) => {
                     console.log(err);
                 }
         });
-    
+        return res.status(200).json({
+            status: 'succes',
+            data: req.body,
+        });
     
     
     
