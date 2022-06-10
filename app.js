@@ -100,7 +100,7 @@ app.post('', (req, res) => {
             return res.status(400).send({ success: false, err });
         }
 
-        uploadPath = __dirname + '/public/upload/' + sampleFileDBname;
+        uploadPath = __dirname + '/upload/' + sampleFileDBname;
         console.log(sampleFile);
 
         //Use mv() to place file on the server
