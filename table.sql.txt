@@ -6,3 +6,8 @@ CREATE TABLE posts(
 	description TEXT,
 	postdate VARCHAR(100)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+Database Login
+mysql --host=us-cdbr-east-05.cleardb.net --user=b2a24ba299581b --password=671c84fb --reconnect heroku_282c9d407c3e7e2
+URL
+http://ec2-44-202-39-17.compute-1.amazonaws.com:5000/
