@@ -126,7 +126,7 @@ app.post('', (req, res) => {
         
         connection.release();
         
-        /*
+        
         connection.query(sql, (err, rows) => {
             //Once done, release connection
             connection.release();
@@ -136,7 +136,7 @@ app.post('', (req, res) => {
                 } else {
                     return res.status(400).send({ success: false, err });
                 }
-        }); */
+        }); 
     
     
     
