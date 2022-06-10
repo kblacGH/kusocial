@@ -7,7 +7,7 @@ const { DATE } = require('mysql/lib/protocol/constants/types');
 
 const app = express();
 const port = process.env.PORT || 5000;
-
+app.listen(port, ()=> console.log(`Listening on port ${port}`));
 //default option
 app.use(fileUpload());
 
@@ -151,4 +151,3 @@ app.post('', (req, res) => {
 });
 
 
-app.listen(port, ()=> console.log(`Listening on port ${port}`));
