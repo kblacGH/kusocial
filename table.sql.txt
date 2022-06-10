@@ -1,8 +1,8 @@
-CREATE TABLE (
-	id INT AUTOINCREMENT
-	name VARCHAR,
-	postimage VARCHAR,
-	title VARCHAR,
+CREATE TABLE posts(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(45),
+	postimage VARCHAR(100),
+	title VARCHAR(45),
 	description TEXT,
-	postdate VARCHAR
-);
+	postdate VARCHAR(100)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
