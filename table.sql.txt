@@ -1,0 +1,8 @@
+CREATE TABLE (
+	id INT AUTOINCREMENT
+	name VARCHAR,
+	postimage VARCHAR,
+	title VARCHAR,
+	description TEXT,
+	postdate VARCHAR
+);

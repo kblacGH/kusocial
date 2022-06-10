@@ -1,0 +1,33 @@
+<h1>Welcome to the Kettering Social Media Page!</h1>
+<h2>Create Post Here!</h2>
+<form action="/" method="POST" enctype="multipart/form-data">
+    <h3>Post Title:</h3>
+    <input type="text" id="title" name="title" maxlength="45"><br>
+    <h3>Name:</h3>
+    <input type="text" id="name" name="name" maxlength="45"><br>
+    <h3>Post Body:</h3>
+    <textarea id="pbody" name="pbody" rows="4" cols="50" style="white-space: pre-line; white-space: pre-wrap;"></textarea>
+    <h3> Upload Image</h3>
+    <input type="file" name="sampleFile" accept="image/*"/><br>
+    <input type="submit" class="btn btn-primary">
+</form>
+
+<h2>Current Posts!</h2>
+    {{#each rows}}
+<div class="card">
+
+    <h2 class="card__name">{{this.name}}</h2>
+    <div class="card__title">{{this.title}}</div>
+
+        {{#if this.postimage}}
+            <img class="card__image" src='{{this.postimage}}' alt="Default">
+            {{else}}
+                <img class="card__image" src="/img/default.jpg" alt="Default">
+        {{/if}}
+
+    
+
+    <p class="card__postbody">{{this.description}}</p>
+    <p class="card__postdate">Uploaded: {{this.postdate}}</p>
+</div><br><br>
+    {{/each}}
