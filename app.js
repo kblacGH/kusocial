@@ -102,11 +102,11 @@ app.post('', (req, res) => {
 
         uploadPath = __dirname + '/upload/' + sampleFileDBname;
         console.log(sampleFile);
-
+        /*
         //Use mv() to place file on the server
         sampleFile.mv(uploadPath, function(err) {
             if(err) return res.status(500).send(err);
-            });
+            }); */
     }
     
 
