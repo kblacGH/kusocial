@@ -29,7 +29,7 @@ var pool = mysql.createPool({
     password: '671c84fb',
     database: 'heroku_282c9d407c3e7e2'
 });
-module.exports = connection;
+module.exports = pool;
 
 pool.getConnection((err, connection)=> {
     if(err) throw err; //not connected
