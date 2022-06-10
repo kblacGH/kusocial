@@ -7,7 +7,7 @@ const { DATE } = require('mysql/lib/protocol/constants/types');
 
 const app = express();
 const port = process.env.PORT || 5000;
-app.listen(port, ()=> console.log(`Listening on port ${port}`));
+
 //default option
 app.use(fileUpload());
 
@@ -18,7 +18,7 @@ app.use(express.static('upload'));
 //templating engine
 app.engine('hbs', exphbs.engine({ extname: '.hbs'}));
 app.set('view engine', 'hbs');
-app.set('port', port);
+//app.set('port', port);
 
 
 
@@ -153,3 +153,4 @@ app.post('', (req, res) => {
 });
 
 
+app.listen(port, ()=> console.log(`Listening on port ${port}`));
