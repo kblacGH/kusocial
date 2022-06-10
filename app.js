@@ -128,7 +128,7 @@ app.post('', (req, res) => {
             connection.release();
 
                 if(!err) {
-                    //res.redirect('/');
+                    res.redirect('/');
                 } else {
                     return res.status(400).send({ success: false, err });
                 }
